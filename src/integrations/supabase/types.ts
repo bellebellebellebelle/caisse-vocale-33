@@ -14,7 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      messages: {
+        Row: {
+          content: string
+          created_at: string
+          data: Json | null
+          id: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          data?: Json | null
+          id?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          data?: Json | null
+          id?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      odoo_settings: {
+        Row: {
+          api_key: string
+          config_id: number | null
+          db: string
+          login: string
+          session_id: number | null
+          updated_at: string
+          url: string
+          user_id: string
+        }
+        Insert: {
+          api_key: string
+          config_id?: number | null
+          db: string
+          login: string
+          session_id?: number | null
+          updated_at?: string
+          url: string
+          user_id: string
+        }
+        Update: {
+          api_key?: string
+          config_id?: number | null
+          db?: string
+          login?: string
+          session_id?: number | null
+          updated_at?: string
+          url?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      sales: {
+        Row: {
+          amount: number
+          created_at: string
+          customer_name: string | null
+          id: string
+          odoo_order_id: number | null
+          product_name: string
+          user_id: string
+        }
+        Insert: {
+          amount?: number
+          created_at?: string
+          customer_name?: string | null
+          id?: string
+          odoo_order_id?: number | null
+          product_name: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          customer_name?: string | null
+          id?: string
+          odoo_order_id?: number | null
+          product_name?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
